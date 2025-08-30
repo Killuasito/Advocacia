@@ -73,7 +73,7 @@ export default function Hero() {
                 >
                   <FaBalanceScale className="text-yellow-500 text-3xl sm:text-4xl flex-shrink-0" />
                   <div className="border-l-2 border-yellow-500 pl-2 ml-2">
-                    <span className="text-white text-sm md:text-2xl tracking-wide font-medium leading-tight block">
+                    <span className="text-white text-base md:text-2xl tracking-wide font-medium leading-tight block">
                       Dr. Wemerson
                     </span>
                     <span className="text-white text-xs md:text-base tracking-wide hidden sm:block">
