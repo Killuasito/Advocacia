@@ -20,10 +20,10 @@ export default function Hero() {
   }, [])
 
   const menuItems = [
-    { name: 'Sobre', icon: <FaBalanceScale className="inline-block mr-2" /> },
-    { name: 'Áreas de Atuação', icon: <BsFillBriefcaseFill className="inline-block mr-2" /> },
-    { name: 'FAQ', icon: <FaQuestionCircle className="inline-block mr-2" /> },
-    { name: 'Contato', icon: <IoMdMail className="inline-block mr-2" /> },
+    { name: 'Sobre', href: '#about', icon: <FaBalanceScale className="inline-block mr-2" /> },
+    { name: 'Áreas de Atuação', href: '#practice', icon: <BsFillBriefcaseFill className="inline-block mr-2" /> },
+    { name: 'FAQ', href: '#faq', icon: <FaQuestionCircle className="inline-block mr-2" /> },
+    { name: 'Contato', href: '#contact', icon: <IoMdMail className="inline-block mr-2" /> },
   ]
 
   const backgroundIcons = [
@@ -87,7 +87,7 @@ export default function Hero() {
                   {menuItems.map((item) => (
                     <Link
                       key={item.name}
-                      href={`#${item.name.toLowerCase().replace(/ /g, '-')}`}
+                      href={item.href}
                       className="text-white hover:text-yellow-500 transition-all duration-300 text-sm uppercase tracking-wider font-medium"
                     >
                       <motion.div
@@ -138,7 +138,7 @@ export default function Hero() {
                       transition={{ delay: index * 0.1 }}
                     >
                       <Link
-                        href={`#${item.name.toLowerCase().replace(/ /g, '-')}`}
+                        href={item.href}
                         className="block py-3 text-white hover:text-yellow-500 transition-colors duration-300 text-sm uppercase tracking-wider font-medium"
                         onClick={() => setIsMenuOpen(false)}
                       >

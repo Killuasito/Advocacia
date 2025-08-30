@@ -9,6 +9,13 @@ export default function Footer() {
     { name: 'Facebook', icon: <FaFacebookF />, href: 'https://facebook.com/share/1B7PCzeH31/?mibextid=wwXlfr' }
   ]
 
+  const quickLinks = [
+    { name: 'Sobre', href: '#about-me' },
+    { name: 'Áreas de Atuação', href: '#practice' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Contato', href: '#contact' },
+  ]
+
   return (
     <footer className="relative bg-gradient-to-b from-black via-black to-black pt-16 pb-8">
       {/* Background overlay */}
@@ -51,14 +58,14 @@ export default function Footer() {
               <div className="bg-gray-900/50 rounded-lg backdrop-blur-sm border border-gray-800/50 h-full p-3">
                 <h3 className="text-white text-base font-semibold border-b border-gray-800/50 pb-2 mb-3">Links Rápidos</h3>
                 <ul className="space-y-2">
-                  {['Sobre Nós', 'Áreas de Atuação', 'Contato'].map((item) => (
-                    <li key={item}>
+                  {quickLinks.map((item) => (
+                    <li key={item.name}>
                       <Link 
-                        href={`#${item.toLowerCase().replace(/ /g, '-')}`}
+                        href={item.href}
                         className="text-gray-400 hover:text-yellow-500 transition-colors duration-300 flex items-center space-x-2 group text-base"
                       >
                         <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
-                        <span>{item}</span>
+                        <span>{item.name}</span>
                       </Link>
                     </li>
                   ))}
@@ -93,7 +100,7 @@ export default function Footer() {
           className="pt-8 border-t border-gray-800/50"
         >
           <p className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Tiago da Silva Ferreira. Todos os direitos reservados.
+            © {new Date().getFullYear()} Dr. Wemerson Texeira de Jesus. Todos os direitos reservados.
           </p>
         </motion.div>
       </div>
