@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaAngleDown, FaQuestionCircle } from 'react-icons/fa'
+import Script from 'next/script'
 
 export default function FAQ() {
   const faqItems = [
@@ -43,6 +44,26 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="relative py-24 bg-black">
+      {/* Structured data for FAQ */}
+      <Script
+        id="structured-data-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqItems.map(item => ({
+              "@type": "Question",
+              "name": item.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.answer
+              }
+            }))
+          })
+        }}
+      />
+      
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
       </div>
@@ -83,6 +104,8 @@ export default function FAQ() {
               <button
                 onClick={() => toggleFAQ(index)}
                 className="flex items-center justify-between w-full p-5 text-left"
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
               >
                 <div className="flex items-center space-x-3">
                   <FaQuestionCircle className="text-yellow-500 flex-shrink-0" />
@@ -99,6 +122,7 @@ export default function FAQ() {
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
+                    id={`faq-answer-${index}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

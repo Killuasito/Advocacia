@@ -1,4 +1,5 @@
 'use client'
+import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaBalanceScale, FaBars, FaTimes, FaGavel, FaFileContract, FaUserFriends, FaClipboardList, FaQuestionCircle } from 'react-icons/fa'
@@ -70,9 +71,9 @@ export default function Hero() {
                   animate={{ opacity: 1, x: 0 }}
                   className="flex items-center"
                 >
-                  <FaBalanceScale className="text-yellow-500 text-4xl flex-shrink-0" />
+                  <FaBalanceScale className="text-yellow-500 text-3xl sm:text-4xl flex-shrink-0" />
                   <div className="border-l-2 border-yellow-500 pl-2 ml-2">
-                    <span className="text-white text-lg md:text-2xl tracking-wide font-medium leading-tight block">
+                    <span className="text-white text-sm md:text-2xl tracking-wide font-medium leading-tight block">
                       Dr. Wemerson
                     </span>
                     <span className="text-white text-xs md:text-base tracking-wide hidden sm:block">
@@ -110,7 +111,7 @@ export default function Hero() {
                     className="text-white hover:text-yellow-500 transition-colors duration-300 p-2"
                     aria-label="Toggle menu"
                   >
-                    {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                    {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
                   </button>
                 </motion.div>
               </div>
@@ -142,7 +143,9 @@ export default function Hero() {
                         onClick={() => setIsMenuOpen(false)}
                       >
                         <div className="flex items-center space-x-2">
-                          <div className="bg-gray-800/70 p-2 rounded-lg">{item.icon}</div>
+                          <div className="bg-gray-800/70 p-2 rounded-lg flex items-center justify-center w-8 h-8">
+                            {React.cloneElement(item.icon, { className: "text-yellow-500 text-sm" })}
+                          </div>
                           <span>{item.name}</span>
                         </div>
                       </Link>
