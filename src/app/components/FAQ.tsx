@@ -24,7 +24,7 @@ export default function FAQ() {
     },
     {
       question: "Qual a diferença entre insalubridade e periculosidade?",
-      answer: "Insalubridade: exposição a agentes nocivos a saúde (ruído, calor, produtos químicos). Já a Periculosidade: risco de vida (explosivos, eletricidade e inflamáveis)."
+      answer: "Insalubridade: exposição a agentes nocivos a saúde (ruído, calor, produtos químicos e biológicos). Já a Periculosidade: risco de vida (explosivos, eletricidade, inflamáveis e etc.)."
     },
     {
       question: "Quem tem direito a rescisão indireta?",

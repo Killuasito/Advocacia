@@ -18,7 +18,7 @@ export default function PracticeAreas() {
       icon: <FaHeartbeat className="w-8 h-8 text-yellow-500" />
     },
     {
-      title: "Adicional por Insalubridade e Periculosidade",
+      title: "Adicional de Insalubridade e Periculosidade",
       detailedDescription: "Profissionais que trabalham em ambientes com substâncias ou condições prejudiciais à saúde (insalubridade), ou que enfrentam riscos que podem colocar sua vida em perigo (periculosidade), têm direito a receber um valor extra no salário. Esse adicional varia de acordo com o nível de risco envolvido e é definido com base em um laudo técnico especializado.",
       icon: <FaMask className="w-8 h-8 text-yellow-500" />
     },
